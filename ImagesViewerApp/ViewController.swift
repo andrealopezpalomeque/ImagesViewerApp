@@ -42,6 +42,13 @@ class ViewController: UITableViewController {
         //return the cell
         return cell
     }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController { //instantiate a new view controller as a DetailViewController
+            vc.selectedImage = pictures[indexPath.row] //set the selectedImage property to the picture name
+            navigationController?.pushViewController(vc, animated: true) //push the new view controller onto the navigation controller
+        }
+    }
     
 }
 
