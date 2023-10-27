@@ -13,6 +13,9 @@ class ViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        title = "Storm Viewer" //set the title of the view controller
+        navigationController?.navigationBar.prefersLargeTitles = true //set the navigation bar to use large titles
         
         let fm = FileManager.default // FileManager is a class that lets you work with the filesystem
         let path = Bundle.main.resourcePath! // Bundle is a directory containing compiled program and all assets (tell me where I can find all my assets)
